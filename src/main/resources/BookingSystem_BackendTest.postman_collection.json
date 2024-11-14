@@ -1,0 +1,883 @@
+{
+	"info": {
+		"_postman_id": "67bdde51-da34-4f33-abf9-fb9fbc4c59c2",
+		"name": "BookingSystem_BackendTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24933905"
+	},
+	"item": [
+		{
+			"name": "user register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"email\": \"ruby@example.com\",\n  \"password\" : \"12345678\",\n  \"name\": \"Ruby\",\n  \"role\": \"\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user change password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDc0NTY1LCJleHAiOjE3MzE1MTA1NjV9.ALJg8TJMGgEHwNt0MGhLq2L8cHBumvB_CNyqPYjZlPI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"email\": \"emma@example.com\",\n  \"oldPassword\" : \"12345678\",\n  \"newPassword\" : \"1234\"\n   \n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/change-password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"change-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user request reset password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA5NDAwLCJleHAiOjE3MzE0NDU0MDB9.I10QOhrJ0BTs9R68qStVaMYDnkVCyVe7cvpOIjK9sCY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/request-reset-password?email=emma@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"request-reset-password"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "emma@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user reset password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA5NDAwLCJleHAiOjE3MzE0NDU0MDB9.I10QOhrJ0BTs9R68qStVaMYDnkVCyVe7cvpOIjK9sCY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reset-password?token=c66f7ad3-6d4e-4aea-8dc0-8e10b87d21d3&newPassword=12345678",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reset-password"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "c66f7ad3-6d4e-4aea-8dc0-8e10b87d21d3"
+						},
+						{
+							"key": "newPassword",
+							"value": "12345678"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user verify",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/verify?token=f09ddbb6-ee01-4ebf-a9d5-59f0dd908451",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "f09ddbb6-ee01-4ebf-a9d5-59f0dd908451"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"mary@example.com\",\n  \"password\" : \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTE3MDc0LCJleHAiOjE3MzE1NTMwNzR9.ei4_WiebiK9nnIbiaojbBoCdOUpiCfIYVIEA36XO1AY",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/profile?userEmail=james@example.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"profile"
+					],
+					"query": [
+						{
+							"key": "userEmail",
+							"value": "james@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user package",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJydWJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTE2MzA0LCJleHAiOjE3MzE1NTIzMDR9.LNs4Dh0y2OXOFL1VqP2aDQMMPsCcc7wpwM8GTWTiGe4",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/package/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"package",
+						"user"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user class",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTM1OTM1LCJleHAiOjE3MzE1NzE5MzV9.3WX5ADBmVg1rG8wcuxRcKbrvfgqEiHH1wNtpLP7RU2E",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schedule/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schedule",
+						"user"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "package avaliable",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTE1ODgyLCJleHAiOjE3MzE1NTE4ODJ9.MdjQvzpUqzAbl3sp1tPilPR67h2D3VEA2He7_hhzkI0",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/package/available?country=MM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"package",
+						"available"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "MM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "package create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDc1MTcwLCJleHAiOjE3MzE1MTExNzB9.La2vZ6J-O_PdaI0KUuM8KzVo9n7Xf8c1eQ2tiySpUik",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Intermediate\",\n    \"country\" : \"SG\",\n    \"credits\" : 15,\n    \"price\" : 8,\n    \"expirationDate\" : \"2025-08-10T00:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/package/admin/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"package",
+						"admin",
+						"create"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "SG",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "package purchase",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTAyMDM1LCJleHAiOjE3MzE1MzgwMzV9.7rOU4CQ6Z7BYdQMBssLFmHIv5CR-ir10kvylXFLNu-E",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/package/purchase?userId=20&packageId=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"package",
+						"purchase"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "20"
+						},
+						{
+							"key": "packageId",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "classSchedule create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW1lc0BleGFtcGxlLmNvbSIsImlhdCI6MTczMTQ4MjQ5MywiZXhwIjoxNzMxNTE4NDkzfQ.2PyLPs6ML_X9u3zM4IY4sC6nKx54kDEYwdeLBGfkYug",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"className\": \"Yoga\",\n    \"description\": \"Yoga for Beginner\",\n    \"startTime\" : \"2025-01-01T09:00:00\",\n    \"endTime\" : \"2025-01-05T11:00:00\",\n    \"capacity\" : 20,\n    \"country\" : \"SG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schedules/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schedules",
+						"create"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "SG",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "classes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDc0NTY1LCJleHAiOjE3MzE1MTA1NjV9.ALJg8TJMGgEHwNt0MGhLq2L8cHBumvB_CNyqPYjZlPI",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schedule/classes?country=SG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schedule",
+						"classes"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "SG"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book class",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTE3MDc0LCJleHAiOjE3MzE1NTMwNzR9.ei4_WiebiK9nnIbiaojbBoCdOUpiCfIYVIEA36XO1AY",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schedule/book?classId=16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schedule",
+						"book"
+					],
+					"query": [
+						{
+							"key": "classId",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check in",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTM1OTM1LCJleHAiOjE3MzE1NzE5MzV9.3WX5ADBmVg1rG8wcuxRcKbrvfgqEiHH1wNtpLP7RU2E",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schedule/checkin?bookingId=13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schedule",
+						"checkin"
+					],
+					"query": [
+						{
+							"key": "bookingId",
+							"value": "13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "class cancel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJ5QGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNTE3MDc0LCJleHAiOjE3MzE1NTMwNzR9.ei4_WiebiK9nnIbiaojbBoCdOUpiCfIYVIEA36XO1AY",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzMxNDA2NzMyLCJleHAiOjE3MzE0NDI3MzJ9.h2E4AE_iwQnR-dl0RdYqNxiG2i2d3_EhW24S_A2kKZg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/schedule/cancel?bookingId=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"schedule",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "bookingId",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
